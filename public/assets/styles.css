@@ -1,0 +1,193 @@
+.input{
+     
+     align-content: center;
+     outline:focus;
+        height: 30px;
+        width:250px;
+        font-size: 15px;
+        font-family: serif;
+        border-radius: 10px;
+        
+}
+    
+.h1{
+    text-align: center;
+    color:#358fdc; 
+    text-shadow:2px 2px black
+}
+.form{
+    text-align:center;
+        border-radius: 10px;
+     width: 30%;
+    padding: 30px 0px 10px 0px;
+    height: 500px;
+    margin-inline-start: 500px;
+    margin-inline-end: 900px;
+    box-sizing: border-box;
+       background-image: url("background.jpg");  
+       border-style: solid;
+       box-shadow:10px 10px black;
+}
+.loginform{
+    text-align:center;
+        border-radius: 10px;
+     width: 30%;
+    padding: 30px 0px 10px 0px;
+    height: 300px;
+    margin-inline-start: 500px;
+    margin-inline-end: 900px;
+    box-sizing: border-box;
+       background-image: url("background.jpg");  
+       border-style: solid;
+       box-shadow:10px 10px black;
+}
+.button{
+        height: 40px;
+         width:150px;
+         background-color: greenyellow;
+         text-align: center;
+         font-size: 20px;
+          font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+        body{
+            /* background-color:grey; */
+             background-image: url("bodybg.jpeg"); 
+             /* background-repeat: no-repeat; */
+            /* background-color:black; */
+    
+        }
+        label{
+            text-indent: center;
+            text-justify: center;
+             font-size: 15px;
+             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+             color:black;
+             text-shadow:2px 2px gray;
+        }
+            input[type=radio]{
+                width:10px;
+                height: 10px;
+
+            }
+            input[type=submit]{
+              color: black;
+              background-color: greenyellow;
+
+            }
+              .container {
+                  margin: auto;
+            width:1100px;
+            height:600px;
+            /* background-color: beige; */
+        }
+    
+       .top {
+            width:100%;
+            height:100px;
+            background-color:palevioletred
+        }
+
+        .downleft {
+           width:300px;
+           height: 500px;
+           float: left;
+           background-color: bisque;
+           overflow: scroll;
+        }
+
+        .downright {
+         width:800px;
+         height: 500px;
+         float:right;
+         background-color: rgba(127, 255, 212, 0);
+         
+        }
+
+        .msgs {
+           
+          height:450px;
+           width:800px;
+           float: right;
+            background-color:pink;
+            overflow: scroll;
+        
+        }
+
+        .msgbox {
+              height:45px;
+               width:750px;
+              float:left;
+              overflow-y: scroll;
+        }
+
+        #icon {
+           float:right;
+           font-size:60px;
+           height:40px;
+               font-size: 42px;
+        }
+
+      
+
+        #menu {
+          float: left;
+           font-size: 42px;
+
+        }
+        #logout{
+           float: right;
+            font-size: 42px;
+            vertical-align: center;
+        }
+        .chatarea{
+            background-color: white;
+        }
+        .messages{
+            height: 45px;
+            width:500px;
+            background-color: antiquewhite
+        }
+        .username{
+            font-size: 10px;
+        }
+        .msgspan{
+            font-size: 15px;
+        }
+        .time{
+            font-size: 10px;
+            float: right;
+        }
+        .left{
+             height: 45px;
+            width:300px;
+            background-color: antiquewhite;
+            text-align: right;
+            overflow: auto;
+    
+            /* float: left; */
+        }
+        .right{
+             height: 45px;
+            width:300px;
+            background-color: rgb(247, 220, 186);
+            text-align: left;
+            margin-left: 485px;
+             overflow: auto;
+    
+            /* float: right; */
+        }
+         .messages{
+            height: 45px;
+            width:500px;
+            background-color: antiquewhite
+        }
+        .leftusername{
+            font-size: 10px;
+        }
+        .leftmsgspan{
+            font-size: 15px;
+        }
+        .lefttime{
+            font-size: 10px;
+            float: left;
+        }

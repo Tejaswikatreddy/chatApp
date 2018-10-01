@@ -1,0 +1,37 @@
+
+    <div class="container" >
+        <div class="top">   
+            <!-- <i class="fa fa-bars" aria-hidden="true" id="menu" ng-click="menu()"></i> -->
+            <i  id="menu" >{{loginuser}}</i>
+                            <i class="fa fa-sign-out" aria-hidden="true" id="logout" ng-click="logout()"></i>
+        </div>
+        <div class="downleft" ><p ng-repeat="user in arr">{{user}}</p></div>
+
+        <div class="downright">
+           
+     <div class="msgs" ><div>
+         <div ng-repeat="x in msgArr track by $index">
+
+        <p class="left" ng-if="x.username!=loginuser">
+                <span class="leftusername">{{x.username}}</span><br>
+                <span class="leftmsgspan">{{x.message}}</span>
+                <span class="lefttime">{{x.date|date:'medium'}}</span>
+        </p>
+<br>
+<p class="right" ng-if="x.username==loginuser">
+    <span class="username">{{x.username}}</span><br>
+    <span class="msgspan">{{x.message}}</span>
+    <span class="time">{{x.date|date:'medium'}}</span>
+</p><br>
+
+</div></div>
+      
+    </div>
+               
+        <div class="chatarea"> <i class="fa fa-envelope" aria-hidden="true" id="icon" ng-click="sendMessage()"> </i>
+                <input type="textarea" class="msgbox" name="msg" placeholder="Type message" ng-model="message">
+        </div>
+        </div>
+    </div>
+            
+        

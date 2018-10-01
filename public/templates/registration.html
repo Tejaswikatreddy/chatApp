@@ -1,0 +1,94 @@
+<!-- <head>
+    <title>
+        Registration Page
+    </title>
+</head>
+<header>
+    <link rel="stylesheet" type="text/css" href="../assets/styles.css">
+
+</header> -->
+
+
+<body>
+    <h1 class="h1">Registration Page</h1>
+     <form class="form"   name="form" item-height="400px" > 
+        <table style="width:100%">
+            <tr>
+                <td width="30%"><label> first name: </label></td>
+                <td width="70%"><input name="firstname" class="input" id="fname" type="text" maxlength="20" placeholder="first name" required ng-model="user.firstname" ng-pattern="/^[A-Za-z][A-Za-z0-9]*$/">
+                   <span style="color:red" ng-show="form.firstname.$dirty && form.firstname.$invalid" class="ng-hide">   
+                  Please enter name without spaces  
+                 </span></td>
+            </tr>
+
+            <tr>
+                <td width="30%"><label>last name: </label></td>
+                <td width="70%"><input name="lastname" class="input" type="text" maxlength="20" placeholder="last name" required ng-model="user.lastname"  ng-pattern="/^[A-Za-z][A-Za-z0-9]*$/">
+              <span style="color:red" ng-show="form.lastname.$dirty && form.lastname.$invalid" class="ng-hide">   
+                  Please enter name without spaces  
+                 </span></td>
+            </tr>
+
+            <tr>
+                <td width="30%"><label>Mobile Number: </label></td>
+                <td width="70%"><input name="mobilenumber" class="input" type="text" max="15" placeholder="9595959595" required ng-model="user.mobilenumber" ng-pattern="/[0-9]{10}/">
+                <span style="color:red" ng-show="form.mobilenumber.$dirty && form.mobilenumber.$invalid" class="ng-hide">   
+                  Please enter valid phonenumber 
+                 </span></td>
+            </tr>
+            <tr>
+                <!-- <td width="30%"><label>Gender: </label></td>
+                <td ><input class="input" type="radio" name="gender" value="male" ng-model="user.gender"> Male
+                                 <input class="input" type="radio" name="gender" value="female"  ng-model="user.gender"> Female
+                                 <input class="input" type="radio" name="gender" value="other"  ng-model="user.gender"> Other
+            </td> -->
+            </tr>
+
+            <tr>
+                <td width="30%"><label>email id: </label></td>
+                <td width="70%"><input class="input" type="email" name="email_id"  placeholder="email12@yahoo.com" required ng-model="user.email_id" ng-pattern="/\S+@\S+\.\S+/">
+                <span style="color:red" ng-show="form.email.$dirty && form.email.$invalid" class="ng-hide">   
+                  Please enter valid email id
+                 </span></td>
+            </tr>
+
+             <tr>
+                <td width="30%"> <label>username: </label></td>
+
+                <td width="70%"><input class="input"  name="username" type="text" placeholder="username" required ng-model="user.username" ng-pattern="/^[A-Za-z][A-Za-z0-9]*$/">
+                <span style="color:rgb(15, 12, 12)" ng-show="form.username.$dirty && form.username.$invalid" class="ng-hide">   
+                  Please enter name without spaces  
+                 </span></td>
+            </tr> 
+            <tr>
+                <td width="30%"> <label>password: </label></td>
+
+                <td width="70%"><input class="input" type="password" placeholder="enter password" required name="password" ng-model="user.password" ng-pattern="/[a-zA-Z]+[0-9]+[!@#$ %^&*_]/">
+                <span style="color:rgb(19, 14, 14)" ng-show="form.password.$dirty && form.password.$invalid" class="ng-hide">   
+                  Please Enter password with number and symbol  
+                 </span></td>
+            </tr>
+            <tr>
+                <td width="30%"><label> confirm password: </label></td>
+                <td width="70%"><input class="input" type="password" placeholder="Re-enter password" required name="confirmpassword"  ng-model="confirmpassword">
+                        <span ng-show="check()" class="ng-hide">please enter same password</span>
+            </tr>
+
+
+
+            <tr>
+                <td width="5%"></td>
+                <td width="95%">
+                    <input id="b1" class="input" type="submit" value="submit" ng-click="register()" width="20px">
+                </td>
+            </tr>
+            </table>
+             
+
+            <a href="#loginpage">already registered?..login </a>
+    </form>
+   
+
+</body>
+
+</html>

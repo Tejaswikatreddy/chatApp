@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="chatApp">
+
+<head>
+     <title>chatApp</title> 
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script> 
+     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-socket-io/0.7.0/socket.min.js"></script>
+    <script src="script.js"></script>
+    <script src="./controller/logincontroller.js"></script>
+   
+    <script src="./controller/registercontroller.js"></script>
+   
+    <script src="./controller/homecontroller.js"></script>
+
+    <script src="./controller/settingscontroller.js"></script>
+   
+</head>
+<body>
+
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+     <div ng-view></div> 
+</body>
+</html>
+<!-- <script src="/controller/loginController.js"></script> -->
