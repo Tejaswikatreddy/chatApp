@@ -20,11 +20,15 @@ io.on('connection', function (client) {
     client.on('disconnect',function () {
         console.log("socket disconnected");
     })
-   
+    client.on('tobackend', function (data) {
+        users.addtodb(data.userid, data.username, data.message, data.date);
+        io.emit('tofrontend', data)
+    })
 
-client.on('tobackend',function (data) {
-    users.addtodb(data.userid, data.username,data.message,data.date);
-    io.emit('tofrontend',data)
+
+client.on('topersonalbackend',function (data) {
+    users.addtopersonaldb(data.senderid, data.message, data.date, data.receiverid,data.sendername,data.receivername);
+    io.emit(data.receiverid,data)
 })
 
 })
