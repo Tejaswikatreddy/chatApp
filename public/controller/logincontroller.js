@@ -1,7 +1,9 @@
 chatApp.controller('loginController', function ($scope, $http,$location) {
+ 
     if(localStorage.getItem("token")!=null){
         $location.path("/dashboard")
     }
+
     else{
     console.log('login');
     $scope.user = {
@@ -9,8 +11,7 @@ chatApp.controller('loginController', function ($scope, $http,$location) {
         'password': ''
     }
     console.log($scope.user);
-
-    console.log($scope.user);
+      
     $scope.login = function () {
         console.log("login credential process", $scope.user);
         $http({
@@ -41,4 +42,5 @@ chatApp.controller('loginController', function ($scope, $http,$location) {
     
     }
     }
+
 });

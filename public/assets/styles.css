@@ -107,9 +107,10 @@
            
           height:450px;
            width:800px;
+           
            float: right;
             background-color:pink;
-            overflow: scroll;
+            overflow: auto;
         
         }
 
@@ -117,7 +118,7 @@
               height:45px;
                width:750px;
               float:left;
-              overflow-y: scroll;
+              overflow: scroll;
         }
 
         #icon {
@@ -131,13 +132,15 @@
 
         #menu {
           float: left;
-           font-size: 42px;
+           font-size: 30px;
 
         }
         #logout{
            float: right;
             font-size: 42px;
             vertical-align: center;
+            /* margin-right: -34px; */
+            margin-top: 16px
         }
         .chatarea{
             background-color: white;
@@ -158,21 +161,21 @@
             float: right;
         }
         .left{
-             height: 45px;
-            width:300px;
-            background-color: antiquewhite;
+             height: auto;
+            width:300px; background-color:palevioletred;
+            
             text-align: right;
             overflow: auto;
     
             /* float: left; */
         }
         .right{
-             height: 45px;
+             height: auto;
             width:300px;
-            background-color: rgb(247, 220, 186);
+         background-color:palevioletred;
             text-align: left;
             margin-left: 485px;
-             overflow: auto;
+            
     
             /* float: right; */
         }
@@ -191,3 +194,14 @@
             font-size: 10px;
             float: left;
         }
+        .userList{
+            height:30px;
+            width: 300px;
+             background-color:palevioletred
+        }
+        .close{
+            background-color: antiquewhite;
+            float: right;
+            margin-top: 66px;
+            margin-right: 20px;
+         }

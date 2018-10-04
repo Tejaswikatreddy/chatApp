@@ -5,13 +5,13 @@
             <i  id="menu" >{{loginuser}}</i>
                             <i class="fa fa-sign-out" aria-hidden="true" id="logout" ng-click="logout()"></i>
         </div>
-        <div class="downleft" ><p ng-repeat="user in arr">{{user}}</p></div>
+        <div class="downleft" ><button class="userList" ng-repeat="user in arr" ng-click="navigate(user.userid,user.username)">{{user.username}}</button></div>
 
         <div class="downright">
            
      <div class="msgs" ><div>
-         <div ng-repeat="x in msgArr track by $index">
-
+         <div ng-repeat="x in msgArr track by $index  ">
+         
         <p class="left" ng-if="x.username!=loginuser">
                 <span class="leftusername">{{x.username}}</span><br>
                 <span class="leftmsgspan">{{x.message}}</span>
@@ -23,6 +23,7 @@
     <span class="msgspan">{{x.message}}</span>
     <span class="time">{{x.date|date:'medium'}}</span>
 </p><br>
+
 
 </div></div>
       

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="top">
+        <!-- <i class="fa fa-bars" aria-hidden="true" id="menu" ng-click="menu()"></i> -->
+        <i id="menu">{{loginuser}}-->{{peerUser}}</i>
+        <button class="close" ng-click="close()">close</button>
+        <i class="fa fa-sign-out" aria-hidden="true" id="logout" ng-click="logout()"></i>
+    </div>
+    <div class="downleft"><button class="userList" ng-repeat="user in arr" ng-click="navigate(user.username,user.userid)">{{user.username}}</button></div>
+
+    <div class="downright">
+
+        <div class="msgs">
+          
+            <div ng-repeat="x in msgArr track by $index  ">
+            <div>
+                <!-- <p class="left" ng-if="x.username!=loginuser && x.flag=='flase'"> -->
+                <p class="left" ng-if="id!=x.senderid">
+                    <span class="leftusername">{{x.sendername}}</span><br>
+                    <span class="leftmsgspan">{{x.message}}</span>
+                    <span class="lefttime">{{x.date|date:'medium'}}</span>
+                </p>
+                
+                <!-- <p class="right" ng-if="x.username==loginuser && x.flag=='false'"> -->
+                    <p class="right" ng-if="id==x.senderid">
+                    <span class="username">{{x.sendername}}</span><br>
+                    <span class="msgspan">{{x.message}}</span>
+                    <span class="time">{{x.date|date:'medium'}}</span>
+                </p>
+            
+            
+            </div>
+            </div>
+
+        </div>
+
+        <div class="chatarea"> <i class="fa fa-envelope" aria-hidden="true" id="icon" ng-click="sendMessage()"> </i>
+            <input type="textarea" class="msgbox" name="msg" placeholder="Type message" ng-model="message">
+        </div>
+    </div>
+</div>

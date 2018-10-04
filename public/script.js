@@ -23,6 +23,10 @@ chatApp.config(function ($routeProvider) {
             templateUrl: 'templates/dashboard.html',
             controller: 'homecontroller'
     })
+        .when('/ptop', {
+            templateUrl: 'templates/ptop.html',
+            controller: 'ptopcontroller'
+        })
 });
 chatApp.service('SocketService', ['socketFactory', function SocketService(socketFactory) {
     return socketFactory({

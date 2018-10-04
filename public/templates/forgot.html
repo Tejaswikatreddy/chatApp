@@ -1,0 +1,28 @@
+<body>
+    <h1 class="h1">Login Page</h1>
+    <form class="loginform" name="form">
+        <table style="width:100%">
+            <tr>
+                <td width="30%"><label>name: </label></td>
+                <td width="70%"><input type="email" name="email_id" ng-model="user.email_id" placeholder="enter name"
+                        class="input" ng-pattern="/\S+@\S+\.\S+/">
+                    <span style="color:red" ng-show="form.email_id.$dirty && form.email_id.$invalid" class="ng-hide">
+                        Please enter valid email id
+                    </span> </td>
+            </tr>
+
+            <tr>
+                <td width="5%"></td>
+                <td width="95%"><input type="submit" value="login" class="input" ng-click="login()"></td>
+            </tr>
+            <tr>
+                <td width="50%" align="center">
+                    <a href="#!/registration" color="black">sign up!</a>
+                </td>
+                <td width="50%" align="right"><a href="">forgot passowrd!</a></td>
+            </tr>
+    </form>
+    </table>
+
+
+</body>
