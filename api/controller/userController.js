@@ -119,7 +119,7 @@ exports.registration = function (req, res) {
  */
 exports.login = function (req, res) {
     var jwt = require('jsonwebtoken');
-    const secret ="sfgrtfrdfwytuyfg!87632334"//secret from which the token will be generated
+    const secret ="!87632334"//secret from which the token will be generated
     var response = {};
     var userModel = require('../models/registration')//impoting the schema 
     if(typeof req.body.email_id=="undefined" || typeof req.body.password=="undefined"){
@@ -174,7 +174,7 @@ exports.listOfUsers=function (req,res) {
     var arrList=[];
     var userid=req.params.id;//getting the id from the parameters
     userModel.find({"_id":{$ne:userid }},function (err,data) {//finding all the useers except the logged in user
-        console.log(data);
+        // console.log(data);
         for(key in data){
                 arrList.push({username:data[key].username,
                                         userid:data[key]._id});
@@ -227,7 +227,7 @@ exports.listOfUsers=function (req,res) {
  * @param {string} message is the message of the logged in user
  * @param {string} date is the date and time of the message sent
  */
-exports.addtodb=function (userid,username,message,date) {
+exports.addtodb = function (userid, username, message, date) {
     var userModel = require('../models/chats');
     var db = new userModel();
     var response={};
@@ -258,6 +258,7 @@ exports.getmsgs=function(req,res){
     var userModel = require('../models/chats');
     var response = {};
     userModel.find({},function(err,data){ //finds all the data in the database
+        // console.log("find")
         if(data){
             response={
                 "error":false,
@@ -276,6 +277,59 @@ exports.getmsgs=function(req,res){
             res.status(401).send(response);
         }
        
+    })
+}
+exports.addtopersonaldb = function (userid,  message, date,receiverid,sendername,receivername) {
+    var userModel = require('../models/personal');
+    var db = new userModel();
+    var response = {};
+    db.message = message;
+    db.date = date;
+    db.senderid = userid;
+    db.sendername = sendername;
+    db.receivername=receivername;
+    db.receiverid = receiverid;
+    db.save(function (err) {//save the data into the database
+        if (err) {
+            response = {
+                "error": true,
+                "message": "error storing data"
+            }
+        }
+        else {
+            response = { "error": false, "message": "succesfully added to database" }
+        }
+    });
+    console.log(response)
+
+}
+exports.getPersonalmsgs = function (req, res) {
+    console.log("backend api")
+    var userModel = require('../models/personal');
+    var response = {};
+    console.log(req.params.peerId);
+    console.log(req.params.id);
+
+    userModel.find({$or:[{ senderid: req.params.peerId, receiverid: req.params.id }, { senderid: req.params.id, receiverid: req.params.peerId }]}, function (err, data) { //finds all the data in the database
+        console.log(data)
+        if (data) {
+            response = {
+                "error": false,
+                "message": data
+
+            }
+            res.status(200).send(response);
+        }
+        else {
+            response = {
+                "error": true,
+                "message": "something went wrong",
+
+            }
+            console.log(err);
+            res.status(401).send(response);
+        }
+
     })
 }
 
